@@ -1,0 +1,25 @@
+spring:
+    application:
+          name: question-server   
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/questiondb
+        username: root
+        password: admin     
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQLDialect
+        show-sql: false
+server:
+    port: 8081
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+         defaultZone: http://localhost:8752/eureka
