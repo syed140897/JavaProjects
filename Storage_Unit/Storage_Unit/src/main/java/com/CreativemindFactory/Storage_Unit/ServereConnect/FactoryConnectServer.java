@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@FeignClient("FACTORY-SERVER")
+@FeignClient(value = "FACTORY-SERVER",path = "/factory-api/api")
 public interface FactoryConnectServer {
 
     @GetMapping("Factory/FetchStock")

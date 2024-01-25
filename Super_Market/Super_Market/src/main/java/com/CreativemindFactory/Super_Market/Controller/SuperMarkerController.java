@@ -31,9 +31,5 @@ public class SuperMarkerController {
         return service.viewStocks();
     }
 
-    @GetMapping("/VehicleDetails/{catalog}/{id}")
-    public ResponseEntity<?> fetchVehicleDetails(@PathVariable String catalog, @PathVariable Integer id){
-        return service.fetchVehicleDetails(catalog,id);
-    }
 
 }

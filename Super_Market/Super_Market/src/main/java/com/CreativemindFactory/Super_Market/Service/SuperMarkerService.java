@@ -55,19 +55,9 @@ public class SuperMarkerService {
     }
 
 
-    public ResponseEntity<?> fetchVehicleDetails(String catalog,Integer id) {
-        StockCatalog stocks=repo.findById(catalog).get();
-        if(stocks.getVehicleId().contains(id)) {
-            Vehicle vehicle = factoryServer.fetchVehicle(id).getBody();
-            System.out.println(vehicle);
-            return new ResponseEntity<>(vehicle,HttpStatus.FOUND);
-        }else{
-            return new ResponseEntity<>("Vehicle Not List in SuperMarket",HttpStatus.BAD_REQUEST);
-        }
-    }
-
     public ResponseEntity<List<StockCatalog>> viewStocks() {
         List<StockCatalog> stockCatalogs=repo.findAll();
         return new ResponseEntity<>(stockCatalogs,HttpStatus.OK);
     }
+
 }
